@@ -1,17 +1,38 @@
-﻿// Projeto de musicas
+﻿Banda pink = new Banda("Pink Floyd");
 
-Musica musica1 = new Musica();
-musica1.nome = "Brain Damage";
-musica1.artista = "Pink Floyd";
-musica1.duracao = 173;
-musica1.disponivel = true;
+Album darkSide = new Album("The Dark Side of The Moon");
 
-Musica musica2 = new Musica();
-musica2.nome = "Oia O Rappa";
-musica2.artista = "O Rappa";
-musica2.duracao = 312;
-musica2.disponivel = false;
+Musica musica1 = new Musica(pink, "Time");
+musica1.Duracao = 425;
 
-musica1.ExibirFichaTecnica();
+Musica musica2 = new Musica(pink, "Money");
+musica2.Duracao = 384;
 
-musica2.ExibirFichaTecnica();
+darkSide.AdicionarMusica(musica1);
+darkSide.AdicionarMusica(musica2);
+
+darkSide.ExibirMuscasDoAlbum();
+
+
+pink.AdicionarAlbum(darkSide);
+
+pink.ExibirDiscografia();
+
+Console.WriteLine();
+
+Podcast podcast1 = new Podcast("Igor e Mitico", "PodPah");
+
+Episodio episodio1 = new Episodio("Entrevistando fulano", 200, 1);
+episodio1.AdicionarConvidados("Marcos");
+Episodio episodio2 = new Episodio("Entrevistando Ciclano", 300, 3);
+episodio2.AdicionarConvidados("João");
+episodio2.AdicionarConvidados("José");
+Episodio episodio3 = new Episodio("Entrevistando Beltrano", 500, 2);
+episodio3.AdicionarConvidados("Joaquim");
+episodio3.AdicionarConvidados("Getulio");
+
+podcast1.AdicionarEpisodio(episodio3);
+podcast1.AdicionarEpisodio(episodio2);
+podcast1.AdicionarEpisodio(episodio1);
+
+podcast1.ExibirDetalhes();
