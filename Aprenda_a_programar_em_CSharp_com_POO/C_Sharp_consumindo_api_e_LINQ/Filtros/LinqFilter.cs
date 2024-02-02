@@ -20,12 +20,20 @@ class LinqFilter
             System.Console.WriteLine($"- {artista}");
         }
     }
-   public static void FiltrarMusicasDeUmArtista(List<Musica> musicas, string artista){
-    var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals(artista)).Select(musica => musica.Nome).ToList();
-    System.Console.WriteLine($"Musicas do artista {artista}");
-    foreach (var musica in musicasDoArtista)
-    {
-        System.Console.WriteLine($"- {musica}");
+    public static void FiltrarMusicasDeUmArtista(List<Musica> musicas, string artista){
+        var musicasDoArtista = musicas.Where(musica => musica.Artista!.Equals(artista)).Select(musica => musica.Nome).ToList();
+        System.Console.WriteLine($"Musicas do artista {artista}");
+        foreach (var musica in musicasDoArtista)
+        {
+            System.Console.WriteLine($"- {musica}");
+        }
     }
+
+    public static void FiltrarMusicasPorKey (List<Musica> musicas, int key){
+        var musicasDaKey = musicas.Where(musica => musica.Key.Equals(key)).Select(musica => musica.Nome).ToList();
+        System.Console.WriteLine($"Musicas da Key {key}");
+        foreach (var musica in musicasDaKey){
+            System.Console.WriteLine($"- {musica}");
+        }
     }
 }
